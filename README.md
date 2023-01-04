@@ -4,4 +4,5 @@ Various projects in Django categorized from Beginner to Advanced stages.
 # Project Index
 
 1. Heroku Deployed Django project
+2. CRUD project.
 
