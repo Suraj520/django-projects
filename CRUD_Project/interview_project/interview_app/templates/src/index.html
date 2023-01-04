@@ -1,0 +1,58 @@
+{% extends 'src/base.html' %}
+{% block title %}Home Page{% endblock title %}
+{% block main_content %} 
+ 
+<section class="container">
+    <div class = "row justify-content-around text-center text-blue mt-5 ">
+        <div class = "col-sm-8-border">
+            <h2> Interview Signup Details</h2>
+        </div> 
+    </div>     
+
+<!---div for button-->
+<div class="row justify-content-around">
+    <div class="col-sm-8">
+        <a href="add-user/" class="btn btn-primary float-end mt-2">Add User</a>
+    </div>
+</div>
+
+
+    <!--- Copied div as it is and sample tabl e from bootstrap5 pasted here-->
+    <div class = "row justify-content-around text-center text-blue mt-1">
+        <div class = "col-sm-8-border">
+            <table class="table table-striped table-hover">
+                <!--- table data from thead to tbody ; copied and pasted --->
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Designation</th>
+                      <th scope="col">User Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for interview in interview_data %}
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{interview.first_name}}</td>
+                      <td>{{interview.last_name}}</td>
+                      <td>{{interview.designation}}</td>
+                      <td>
+                   
+                        <form action="{% url 'delete-user' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="id" value={{interview.first_name}}>
+                               <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        </form>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+            </table>
+        </div> 
+    </div> 
+
+
+</section>
+{% endblock main_content %}

@@ -1,0 +1,33 @@
+{% extends 'src/base.html' %}
+{% block title %}Home Page{% endblock title %}
+{% block main_content %} 
+ 
+<section class="container">
+    <div class = "row justify-content-around text-center text-blue mt-5 ">
+        <div class = "col-sm-8-border">
+            <h2> Interview Signup Details</h2>
+        </div> 
+    </div>     
+
+<!---div for button-->
+<div class="row justify-content-around">
+    <div class="col-sm-13">
+        <a href="#" class="btn btn-primary float-end mt-2">Add User</a>
+    </div>
+</div>
+
+
+    <!--- Copied div as it is and sample tabl e from bootstrap5 pasted here-->
+    <div class = "row justify-content-around text-center text-blue mt-1">
+        <div class = "col-sm-4">
+            <form action="" method = "POST" class="bg-purple p-3 rounded shadow">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div> 
+    </div> 
+
+
+</section>
+{% endblock main_content %}
