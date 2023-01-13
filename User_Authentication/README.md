@@ -1,7 +1,7 @@
 #### About
 User Authentication project in Django
 
-
+![Alt Text](user_auth.png)
 #### Steps.
 
 1. Run the following command to activate virtualenv
@@ -30,7 +30,7 @@ django-admin startapp authenticator
 9. Create base.html and paste sample bootstrap code in it and then create authenticator.html
 10. Create a view in views.py to render the html page in the authenticator app directory.
 11. Create a bootstrap form and put in authenticator.html
-12. Check the page by visiting - http://127.0.0.1:8000/signin after executing
+12. Check the page by visiting - http://127.0.0.1:8000 after executing
 ```
 python manage.py runserver
 ```
