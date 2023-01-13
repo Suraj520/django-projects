@@ -1,0 +1,53 @@
+{% extends 'src/base.html' %}
+{% block title %}Home Page{% endblock title %}
+{% block main_content %} 
+ 
+<section class="container">
+    <div class = "row  text-blue mt-5 ">
+        <div class = "col-sm-8-border">
+            <h2> Artist Recommendation System</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+    
+            <form action="predict">
+            <div class="row">
+                <div class="col-sm-4 justify-content-around text-center mt-1">
+                    <p>Enter Artist Name</p>
+                    <input type="text" name="artist_name">
+                </div>
+            </div>
+            <div class="row justify-content-around text-center text-blue mt-1 ">
+                <input type="submit" value="Recommend .." class="btn btn-primary"   >
+            </div>
+          
+            </form>
+            <div class = "col-sm-8-border text-center">
+
+                <h5> Recommended Artists</h5>
+                </div>
+            {% for artist in recommended_artists %}
+            <div class="row justify-content-around text-center text-blue mt-1">
+                
+            
+                <h6>{{artist}}</h6>
+            </div>
+        </div> 
+    </div>  
+    {% endfor %}   
+
+
+
+
+    <!--- Copied div as it is and sample tabl e from bootstrap5 pasted here-->
+    <div class = "row justify-content-around text-center text-blue mt-1">
+        <div class = "col-sm-8-border">
+            
+        </div> 
+    </div> 
+
+
+</section>
+{% endblock main_content %}
